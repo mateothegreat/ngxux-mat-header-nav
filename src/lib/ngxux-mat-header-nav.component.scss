@@ -1,0 +1,71 @@
+@import 'theme';
+
+:host {
+    
+    .wrapper {
+        
+        min-height: 140px;
+        background: $theme-layout-page-header-background;
+        
+        button {
+            
+            background: $theme-layout-page-header-button-background;
+            color: $theme-layout-page-header-button-color;
+            
+            font-variant: all-small-caps;
+            font-size: 18px;
+            font-weight: normal;
+            
+        }
+        
+        .top {
+            
+            display: flex;
+            align-items: center;
+            
+            height: 110px;
+            
+            .left {
+                
+                flex: 0 1 300px;
+                
+                padding: 20px;
+                
+                .title {
+                    
+                    font-weight: bold;
+                    font-size: 20px;
+                    
+                    color: $theme-layout-page-header-color;
+                    
+                }
+                
+            }
+            
+            .right {
+                
+                flex: 1;
+                
+                display: flex;
+                justify-content: flex-end;
+                
+                padding: 20px;
+                
+                button {
+                    
+                    margin-left: 20px;
+                    
+                }
+                
+            }
+            
+        }
+        
+        .bottom {
+        
+        
+        }
+        
+    }
+    
+}
