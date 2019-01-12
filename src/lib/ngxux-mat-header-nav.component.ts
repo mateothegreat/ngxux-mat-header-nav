@@ -19,6 +19,13 @@ import { NgxuxMatHeaderNavButton }                from './ngxux-mat-header-nav-b
 
                     </div>
 
+                    <div *ngIf="detail"
+                         class="detail">
+
+                        {{ detail }}
+
+                    </div>
+
                 </div>
 
                 <div class="right">
@@ -65,6 +72,7 @@ import { NgxuxMatHeaderNavButton }                from './ngxux-mat-header-nav-b
 export class NgxuxMatHeaderNavComponent {
 
     @Input() public title;
+    @Input() public detail;
     @Input() public buttons: Array<NgxuxMatHeaderNavButton>;
     @Input() public tabs: Array<NgxuxMatHeaderNavButton>;
 
