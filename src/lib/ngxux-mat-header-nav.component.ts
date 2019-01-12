@@ -28,16 +28,32 @@ import { NgxuxMatHeaderNavButton }                from './ngxux-mat-header-nav-b
 
                 </div>
 
-                <div class="right">
+                <div class="right" [class.right-reversed]="contentPosition === 'top'">
 
-                    <button *ngFor="let button of buttons"
-                            [routerLink]="button.path ? [ button.path ] : null"
-                            (click)="onButtonClick(button)"
-                            mat-raised-button>
+                    <div *ngIf="contentPosition === 'top'">
 
-                        {{ button.label }}
+                        <ng-content></ng-content>
 
-                    </button>
+                    </div>
+
+                    <div class="buttons">
+
+                        <button *ngFor="let button of buttons"
+                                [routerLink]="button.path ? [ button.path ] : null"
+                                (click)="onButtonClick(button)"
+                                mat-raised-button>
+
+                            {{ button.label }}
+
+                        </button>
+
+                    </div>
+
+                    <div class="ngcontent">
+
+                        <ng-content></ng-content>
+
+                    </div>
 
                 </div>
 
@@ -71,8 +87,10 @@ import { NgxuxMatHeaderNavButton }                from './ngxux-mat-header-nav-b
 })
 export class NgxuxMatHeaderNavComponent {
 
-    @Input() public title;
-    @Input() public detail;
+    @Input() public title: string;
+    @Input() public detail: string;
+    @Input() public contentPosition: string = 'bottom';
+
     @Input() public buttons: Array<NgxuxMatHeaderNavButton>;
     @Input() public tabs: Array<NgxuxMatHeaderNavButton>;
 
